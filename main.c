@@ -11,11 +11,11 @@ int main(){
 				break ;
 			case 'B':
 				scanf("%d %d", &i, &j) ;
-				printf("%s", is_path_exists(i,j)) ;
+				printf("%s\n", is_path_exists(i,j)) ;
 				break ;
 			case 'C':
 				scanf("%d %d", &i, &j) ;
-				printf("%d", shortest_path(i,j)) ;
+				printf("%d\n", shortest_path(i,j)) ;
 				break ;
 		}
 	}
