@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "my_mat.h"
 int main(){
-	int i, j ;
-	char option ;
+	int i = 0, j = 0 ;
+	char option = '0';
 	while(option != 'D'){
 		scanf("%c", &option) ;
 		switch(option){
@@ -19,5 +19,5 @@ int main(){
 				break ;
 		}
 	}
-	return 0 ;
+	return 1 ;
 }
