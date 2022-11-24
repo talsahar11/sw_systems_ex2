@@ -1,6 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
-#define n 5
+#define n 10
 
 int mat[n][n] = {0} ;
 int i, j ;
@@ -33,6 +33,14 @@ void floyd_warshall(int mat[n][n]){
 			}
 		}
 	}
+	
+	for(i = 0 ; i < n ; i++){
+		for(j = 0 ; j < n ; j++){
+			if(mat[i][j] == INT_MAX){
+				mat[i][j] = 0 ;
+			}
+		}	
+	}
 }
 
 void scan_matrix(){
@@ -41,13 +49,12 @@ void scan_matrix(){
 			scanf("%d", &mat[i][j]) ;
 		}
 	}	
-	
 	//After the materix was scanned to the system, apply the floyd warshall algorithm on it.
 	floyd_warshall(mat) ;
 }
 
 char * is_path_exists(int i, int j){
-	if(mat[i][j] == INT_MAX){
+	if(mat[i][j] == 0){
 		return "False" ;
 	}else{
 		return "True" ;
@@ -55,7 +62,7 @@ char * is_path_exists(int i, int j){
 }
 
 int shortest_path(int i, int j){
-	if(mat[i][j] != INT_MAX){
+	if(mat[i][j] != 0){
 		return mat[i][j] ;
 	}else{
 		return -1 ;
